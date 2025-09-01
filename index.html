@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CinemaSocial - Sua rede de reviews e trailers</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>CinemaSocial</h1>
+    <p>Descubra, avalie e compartilhe opiniões sobre seus filmes, séries e muito mais!</p>
+  </header>
+
+  <main id="content">
+    <section class="movies-list">
+      <!-- Exemplo de filme -->
+      <article class="movie-card" data-trailer="https://www.youtube.com/embed/YoHD9XEInc0" data-music="https://www.bensound.com/bensound-music/bensound-summer.mp3">
+        <img src="https://upload.wikimedia.org/wikipedia/pt/thumb/b/bb/Interstellar_film_poster.jpg/220px-Interstellar_film_poster.jpg" alt="Interstellar" />
+        <h2>Interstellar</h2>
+      </article>
+
+      <article class="movie-card" data-trailer="https://www.youtube.com/embed/8hP9D6kZseM" data-music="https://www.bensound.com/bensound-music/bensound-slowmotion.mp3">
+        <img src="https://upload.wikimedia.org/wikipedia/en/7/7a/1917poster.jpg" alt="1917" />
+        <h2>1917</h2>
+      </article>
+
+      <article class="movie-card" data-trailer="https://www.youtube.com/embed/EXeTwQWrcwY" data-music="https://www.bensound.com/bensound-music/bensound-buddy.mp3">
+        <img src="https://upload.wikimedia.org/wikipedia/en/6/67/Inception_ver3.jpg" alt="Inception" />
+        <h2>Inception</h2>
+      </article>
+
+      <article class="movie-card" data-trailer="https://www.youtube.com/embed/lX44CAz-JhU" data-music="https://www.bensound.com/bensound-music/bensound-happyrock.mp3">
+        <img src="https://upload.wikimedia.org/wikipedia/en/2/29/Avengers_Endgame_poster.jpg" alt="Avengers: Endgame" />
+        <h2>Avengers: Endgame</h2>
+      </article>
+    </section>
+  </main>
+
+  <!-- Modal -->
+  <div id="modal" class="modal hidden" aria-hidden="true" role="dialog" aria-labelledby="modalTitle" aria-modal="true">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Fechar modal">&times;</button>
+      <h2 id="modalTitle"></h2>
+      <div class="video-wrapper">
+        <iframe id="video" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+      <audio id="audio" controls></audio>
+      <div class="rating-section">
+        <p>Avalie com estrelas</p>
+        <div class="stars" role="radiogroup" aria-label="Avaliação por estrelas">
+          <button class="star" aria-checked="false" role="radio" data-value="1" aria-label="1 estrela">★</button>
+          <button class="star" aria-checked="false" role="radio" data-value="2" aria-label="2 estrelas">★</button>
+          <button class="star" aria-checked="false" role="radio" data-value="3" aria-label="3 estrelas">★</button>
+          <button class="star" aria-checked="false" role="radio" data-value="4" aria-label="4 estrelas">★</button>
+          <button class="star" aria-checked="false" role="radio" data-value="5" aria-label="5 estrelas">★</button>
+        </div>
+      </div>
+      <div class="comment-section">
+        <label for="comment-input">Deixe sua opinião</label>
+        <textarea id="comment-input" placeholder="Escreva seu comentário aqui..." rows="4"></textarea>
+        <button id="submit-comment">Enviar</button>
+      </div>
+      <div class="comments-list"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
